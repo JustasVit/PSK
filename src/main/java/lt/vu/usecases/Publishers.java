@@ -3,6 +3,7 @@ package lt.vu.usecases;
 import lombok.Getter;
 import lombok.Setter;
 import lt.vu.entities.Publisher;
+import lt.vu.persistence.IPublisher;
 import lt.vu.persistence.PublishersDAO;
 
 import javax.annotation.PostConstruct;
@@ -15,7 +16,7 @@ import java.util.List;
 public class Publishers {
 
     @Inject
-    private PublishersDAO publishersDAO;
+    private IPublisher publishersDAO;
 
     @Getter @Setter
     private Publisher publisherToCreate = new Publisher();

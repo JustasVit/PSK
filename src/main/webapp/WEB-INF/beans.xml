@@ -6,6 +6,16 @@
                       http://xmlns.jcp.org/xml/ns/javaee/beans_1_1.xsd"
         bean-discovery-mode="annotated">
 
+    <alternatives>
+        <class>lt.vu.persistence.SlowPublishersDAO</class>
+    </alternatives>
+
     <interceptors>
+        <class>lt.vu.interceptors.MethodLoggerImpl</class>
     </interceptors>
+
+    <decorators>
+        <class>lt.vu.decorators.RandomStringGeneratorDecorator</class>
+    </decorators>
+
 </beans>

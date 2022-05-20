@@ -6,8 +6,9 @@ import lombok.Setter;
 import javax.persistence.*;
 import javax.validation.constraints.Size;
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
-import java.util.Set;
 
 @Entity
 @NamedQueries({
@@ -38,9 +39,14 @@ public class Book implements Serializable {
             name = "author_book",
             joinColumns = @JoinColumn(name = "author_id",referencedColumnName = "ID"),
             inverseJoinColumns = @JoinColumn(name = "book_ID",referencedColumnName = "ID"))
-    Set<Author> bookAuthors;
+    List<Author> bookAuthors = new ArrayList<>();
 
     public Book() {
+    }
+
+    @Override
+    public String toString() {
+        return getId().toString();
     }
 
     @Override

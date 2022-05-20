@@ -26,6 +26,9 @@ public class Publisher {
 
     private String name;
 
+    @Version
+    private int version;
+
     @OneToMany(mappedBy = "publisher")
     private List<Book> books = new ArrayList<>();
 
